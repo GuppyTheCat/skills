@@ -1,13 +1,13 @@
 ---
 name: russian-prose
 description: >-
-  Natural Russian prose. Use when writing any Russian text in any repository:
-  notes, replies, README, commits, PRs.
+  Natural Russian prose. Use when writing, editing or reviewing any Russian
+  text in any repository: notes, replies, README, commits, PRs.
 ---
 
 # Russian prose
 
-Russian written by an agent should read as written by a native speaker. The usual failure is telegraph style and English glue inside Russian sentences, more often than bureaucratic officialese.
+Russian written by an agent should read as written by a native speaker. The usual failure is telegraph style and English glue inside Russian sentences, not officialese.
 
 ## Check before handing text back
 
@@ -17,13 +17,15 @@ Run from this skill's directory. The script checks Markdown files only:
 python3 scripts/russian_prose_check.py FILE.md [FILE.md ...]
 ```
 
+Pass absolute paths to the files you check, because the command runs from the skill folder, not from your repository.
+
 For a commit message or PR body, save the draft to a temporary Markdown file and check that.
 
 Fix every hit unless it is a quote the user dictated. The script covers patterns 1–8. Reread the text for 9–14 yourself.
 
 ## Patterns
 
-Numbers are stable ids shared with the script. Bad examples are real agent text.
+Numbers are stable ids shared with the script. Bad examples come from real agent text.
 
 ### Caught by the script
 
@@ -38,7 +40,7 @@ Numbers are stable ids shared with the script. Bad examples are real agent text.
 
    | Before | After |
    | --- | --- |
-   | «H1 + рейтинг + УТП + CTA в бот» | «В заголовке название мастерской, под ним рейтинг, преимущества и кнопка, которая ведёт в бот.» |
+   | «H1 + рейтинг + УТП + CTA в бот» | «В заголовке стоит название мастерской, под ним идут рейтинг, преимущества и кнопка, которая ведёт в бот.» |
    | «Симптом → лид, альтернатива прайсу.» | «Блок заменяет прайс: клиент выбирает неисправность и оставляет заявку.» |
 
 3. **Slash lists.** Join the items with commas and the conjunction you mean.
@@ -93,7 +95,7 @@ Numbers are stable ids shared with the script. Bad examples are real agent text.
 
    | Before | After |
    | --- | --- |
-   | «Блок высокий: на скрине обрезан верх.» | «Блок высокий, поэтому на скриншоте обрезан верх.» |
+   | «Блок высокий: на скрине без верха.» | «Блок высокий, поэтому верх не поместился на скриншот.» |
 
 10. **Hedges and agent notes to self.** Write only the caveats the user stated. Keep notes about the agent's future work out of the text body. The user deleted all of these:
 
@@ -120,7 +122,7 @@ Numbers are stable ids shared with the script. Bad examples are real agent text.
     | --- | --- |
     | «Файл был создан агентом» | «Агент создал файл» |
 
-14. **One register per text.** Neutral by default. The imperative second person is fine in a personal how-to, but then the whole text uses it:
+14. **One register per text.** Neutral by default. The imperative second person is fine in a personal how-to, but then the whole text uses it. An acceptable how-to line:
 
     - «Втыкай по ключу, не переворачивай»
 
