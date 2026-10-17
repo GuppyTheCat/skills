@@ -24,5 +24,3 @@ One skill, project-local:
 ```bash
 npx skills add GuppyTheCat/skills --skill <name>
 ```
-
-On the author's machine, `~/.agents/skills/blackmage` links to `skills/` directly.
